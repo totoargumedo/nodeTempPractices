@@ -1,4 +1,5 @@
 import http from "http";
+import "dotenv/config";
 
 function requestController() {
   console.log("Holis");
@@ -6,4 +7,6 @@ function requestController() {
 
 const server = http.createServer(requestController);
 
-server.listen(8080);
+const PORT = process.env.PORT || 8080;
+
+server.listen(PORT);
