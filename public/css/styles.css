@@ -1,0 +1,28 @@
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+button {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: chocolate;
+  color: white;
+  font-size: 18px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+#create-tasks {
+  background-color: rgb(36, 153, 199);
+}
+#get-tasks {
+  background-color: rgb(36, 199, 134);
+}
+
+button:hover {
+  opacity: 0.6;
+}
