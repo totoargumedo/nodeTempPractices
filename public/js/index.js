@@ -3,6 +3,7 @@ const createEditBtn = document.querySelector("#create-tasks");
 const input = document.querySelector("#task-name");
 const tasksContainer = document.querySelector("#tasks-container");
 let TASK_TO_EDIT = null;
+const BASE_URL = window.origin;
 
 getBtn.addEventListener("click", async (e) => {
   await getTasks();
