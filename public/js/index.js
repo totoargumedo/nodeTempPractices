@@ -13,7 +13,7 @@ createEditBtn.addEventListener("click", (e) => {
   const creating = !TASK_TO_EDIT;
   const path = creating ? "/api/tasks" : `/api/tasks/${TASK_TO_EDIT._id}`;
   const method = creating ? "POST" : "PUT";
-  fetch(path, {
+  fetch(BASE_URL + path, {
     method: method,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text: input.value }),
@@ -33,7 +33,7 @@ createEditBtn.addEventListener("click", (e) => {
 
 function getTasks() {
   tasksContainer.innerHTML = "";
-  fetch("/api/tasks")
+  fetch(`${BASE_URL}/api/tasks`)
     .then((response) => {
       return response.json();
     })
@@ -64,7 +64,7 @@ function getTasks() {
 function deleteTasks(event, button) {
   const tid = event.target.id;
   button.innerText = "...";
-  fetch(`/api/tasks/${tid}`, {
+  fetch(`${BASE_URL}/api/tasks/${tid}`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text: input.value }),
